@@ -187,6 +187,20 @@ int ve_get_version(void)
     return ve.version;
 }
 
+void *ve_get_regs(void)
+{
+    void *regs;
+    
+    if (pthread_mutex_lock(&ve.device_lock))
+        return NULL;
+
+    regs = ve.regs;
+    
+    pthread_mutex_unlock(&ve.device_lock);
+    return regs;
+}
+
+
 int ve_wait(int timeout)
 {
     if (ve.fd == -1)
@@ -609,4 +623,3 @@ uint32_t veavc_get_written(void)
     bits = readl(ve.regs + VE_AVC_VLE_LENGTH) & 0xf;
     return bits / 8;
 }
-
