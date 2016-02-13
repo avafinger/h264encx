@@ -50,10 +50,6 @@ static inline uint32_t readl(void *addr)
     return *((volatile uint32_t *) addr);
 }
 
-// extern struct ve_t ve;
-// #define S(val, ve, off)	writel(val, ve.regs + (off))
-// #define L(ve, ve, off)		readl(ve.regs + (off))
-
 #define VE_ENGINE_MPEG			0x0
 #define VE_ENGINE_H264			0x1
 #define VE_ENGINE_HEVC			0x4
