@@ -8,7 +8,9 @@ This is an attempt to get h264enc working on H3.
 Limitations:
 ------------
 
-- none yet
+- this code is broken in many ways, and needs to be fixed:
+* proper way of handling ion mem
+* finding the correct IOCTLs and its register offset
 
 Usage:
 ------
